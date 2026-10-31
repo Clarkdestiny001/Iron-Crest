@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore IronCrest Construction's portfolio of commercial, residential, industrial, and infrastructure projects.">
+    <meta property="og:title" content="Our Projects | IronCrest Construction">
+    <meta property="og:description" content="Browse our portfolio of landmark construction projects worldwide.">
+    <title>Our Projects | IronCrest Construction</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='10' fill='%23C9A96E'/><text x='50' y='65' font-size='50' text-anchor='middle' fill='%231A1A1A' font-family='serif' font-weight='bold'>I</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="spinner"></div>
+        <p class="loading-text">Loading IronCrest Construction</p>
+    </div>
+
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="IronCrest Construction Home">
+                <div class="logo-icon">IC</div>
+                <span>IronCrest Construction</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80" alt="Projects portfolio" loading="eager">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-label">Portfolio</span>
+            <h1>Our <span>Landmark</span> Projects</h1>
+            <p>A curated collection of our most significant work across commercial, residential, industrial, and infrastructure sectors.</p>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Portfolio</span>
+                <h2>Featured Projects</h2>
+                <p>Click on any project to view detailed information.</p>
+            </div>
+            
+            <div class="projects-filter reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="industrial">Industrial</button>
+                <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card reveal" data-project="meridian-tower" data-category="commercial">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Meridian Tower" loading="lazy">
+                    <span class="project-category">Commercial</span>
+                    <div class="project-overlay">
+                        <h3>Meridian Tower</h3>
+                        <p>New York, NY — 2024</p>
+                    </div>
+                </div>
+                
+                <div class="project-card reveal" data-project="azure-residences" data-category="residential">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Azure Residences" loading="lazy">
+                    <span class="project-category">Residential</span>
+                    <div class="project-overlay">
+                        <h3>Azure Residences</h3>
+                        <p>Miami, FL — 2023</p>
+                    </div>
+                </div>
+                
+                <div class="project-card reveal" data-project="nexus-industrial" data-category="industrial">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80" alt="Nexus Industrial Park" loading="lazy">
+                    <span class="project-category">Industrial</span>
+                    <div class="project-overlay">
+                        <h3>Nexus Industrial Park</h3>
+                        <p>Houston, TX — 2024</p>
+                    </div>
+                </div>
+                
+                <div class="project-card reveal" data-project="horizon-bridge" data-category="infrastructure">
+                    <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&q=80" alt="Horizon Bridge" loading="lazy">
+                    <span class="project-category">Infrastructure</span>
+                    <div class="project-overlay">
+                        <h3>Horizon Bridge</h3>
+                        <p>Seattle, WA — 2023</p>
+                    </div>
+                </div>
+                
+                <div class="project-card reveal" data-project="plaza-central" data-category="commercial">
+                    <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?w=800&q=80" alt="Plaza Central" loading="lazy">
+                    <span class="project-category">Commercial</span>
+                    <div class="project-overlay">
+                        <h3>Plaza Central</h3>
+                        <p>Chicago, IL — 2022</p>
+                    </div>
+                </div>
+                
+                <div class="project-card reveal" data-project="oakwood-estates" data-category="residential">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Oakwood Estates" loading="lazy">
+                    <span class="project-category">Residential</span>
+                    <div class="project-overlay">
+                        <h3>Oakwood Estates</h3>
+                        <p>Austin, TX — 2024</p>
+                    </div>
+                </div>
+                
+                <div class="project-card reveal" data-category="industrial">
+                    <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&q=80" alt="Pacific Logistics Hub" loading="lazy">
+                    <span class="project-category">Industrial</span>
+                    <div class="project-overlay">
+                        <h3>Pacific Logistics Hub</h3>
+                        <p>Los Angeles, CA — 2023</p>
+                    </div>
+                </div>
+                
+                <div class="project-card reveal" data-category="infrastructure">
+                    <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=800&q=80" alt="Metro Line Extension" loading="lazy">
+                    <span class="project-category">Infrastructure</span>
+                    <div class="project-overlay">
+                        <h3>Metro Line Extension</h3>
+                        <p>Washington, DC — 2024</p>
+                    </div>
+                </div>
+                
+                <div class="project-card reveal" data-category="commercial">
+                    <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=800&q=80" alt="The Summit" loading="lazy">
+                    <span class="project-category">Commercial</span>
+                    <div class="project-overlay">
+                        <h3>The Summit</h3>
+                        <p>Denver, CO — 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div class="modal-overlay" role="dialog" aria-modal="true" aria-label="Project details">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <img class="modal-image" src="" alt="" loading="lazy">
+            <div class="modal-body">
+                <h2></h2>
+                <div class="modal-meta">
+                    <span class="modal-meta-item"><i class="fas fa-map-marker-alt"></i> <span class="modal-location"></span></span>
+                    <span class="modal-meta-item"><i class="fas fa-calendar"></i> <span class="modal-year"></span></span>
+                </div>
+                <p class="modal-description"></p>
+                <a href="contact.html" class="btn btn-primary">Inquire About This Project</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-label" style="color: var(--gold);">Your Project</span>
+                <h2>Ready to Add Your Project to Our Portfolio?</h2>
+                <p>Let's create something extraordinary together.</p>
+                <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem;">
+                        <div class="logo-icon">IC</div>
+                        <span>IronCrest Construction</span>
+                    </a>
+                    <p>Building tomorrow's landmarks with precision, innovation, and unwavering commitment to excellence since 1998.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-toast" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-toast" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-toast" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-toast" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" class="social-toast" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Commercial Construction</a></li>
+                        <li><a href="services.html">Residential Construction</a></li>
+                        <li><a href="services.html">Industrial Projects</a></li>
+                        <li><a href="services.html">Renovation</a></li>
+                        <li><a href="services.html">Infrastructure</a></li>
+                        <li><a href="services.html">Project Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 450 Park Avenue, Suite 2100<br>New York, NY 10022</p>
+                    <p><i class="fas fa-phone"></i> +1 (212) 555-0147</p>
+                    <p><i class="fas fa-envelope"></i> info@ironcrestconstruction.com</p>
+                    <p><i class="fas fa-clock"></i> Mon - Fri: 8:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IronCrest Construction. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    
+    <div class="cookie-banner" role="dialog" aria-label="Cookie consent">
+        <div class="container">
+            <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies. <a href="#">Learn more</a></p>
+            <button class="btn btn-primary cookie-accept" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">Accept</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
