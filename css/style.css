@@ -79,7 +79,7 @@ button {
 /* --- Typography --- */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: -0.02em;
     color: var(--white);
     line-height: 1.2;
@@ -99,7 +99,7 @@ p {
     display: inline-block;
     color: var(--gold);
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-bottom: 1rem;
@@ -123,7 +123,7 @@ p {
     gap: 0.5rem;
     padding: 1rem 2.5rem;
     font-size: 0.95rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
     border-radius: 2px;
@@ -286,7 +286,7 @@ p {
     gap: 0.75rem;
     font-family: 'Inter', sans-serif;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 500;
     color: var(--white);
 }
 
@@ -299,9 +299,7 @@ p {
     align-items: center;
     justify-content: center;
     color: var(--charcoal);
-    font-weight: 900;
-    font-size: 1rem;
-    letter-spacing: -0.5px;
+    font-size: 1.15rem;
 }
 
 .nav-links {
@@ -313,7 +311,7 @@ p {
 .nav-links a {
     color: var(--white);
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 0.5px;
     position: relative;
     padding: 0.25rem 0;
@@ -419,7 +417,7 @@ p {
 .hero-label {
     color: var(--gold);
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 4px;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
@@ -436,6 +434,7 @@ p {
 }
 
 .hero p {
+    font-weight: 300;
     font-size: clamp(1rem, 2vw, 1.25rem);
     color: var(--light-gray);
     margin-bottom: 2.5rem;
@@ -496,7 +495,7 @@ p {
 .stat-number {
     font-family: 'Inter', sans-serif;
     font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: 700;
+    font-weight: 500;
     color: var(--gold);
     line-height: 1;
     margin-bottom: 0.5rem;
@@ -647,7 +646,7 @@ p {
 .filter-btn {
     padding: 0.6rem 1.5rem;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--medium-gray);
     background: transparent;
     border: 1px solid var(--glass-border);
@@ -737,7 +736,7 @@ p {
     color: var(--charcoal);
     padding: 0.3rem 0.8rem;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 2px;
@@ -927,7 +926,7 @@ p {
     padding: 1.5rem 0;
     color: var(--white);
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
     text-align: left;
     cursor: pointer;
     transition: var(--transition-smooth);
@@ -1059,7 +1058,7 @@ p {
     margin-bottom: 0.5rem;
     color: var(--white);
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .form-group input,
@@ -1151,7 +1150,7 @@ p {
 
 .timeline-year {
     color: var(--gold);
-    font-weight: 700;
+    font-weight: 500;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
     letter-spacing: 1px;
@@ -1444,7 +1443,7 @@ p {
 .error-code {
     font-family: 'Inter', sans-serif;
     font-size: clamp(6rem, 15vw, 12rem);
-    font-weight: 700;
+    font-weight: 500;
     color: var(--gold);
     line-height: 1;
     opacity: 0.3;
