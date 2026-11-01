@@ -111,50 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Testimonials Slider ---
-    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
-    const testimonialDots = document.querySelectorAll('.testimonial-dots .dot');
-    const prevBtn = document.querySelector('.testimonial-prev');
-    const nextBtn = document.querySelector('.testimonial-next');
-    let currentSlide = 0;
-
-    function showSlide(index) {
-        testimonialSlides.forEach((slide, i) => {
-            slide.classList.remove('active');
-            if (testimonialDots[i]) testimonialDots[i].classList.remove('active');
-        });
-        
-        testimonialSlides[index].classList.add('active');
-        if (testimonialDots[index]) testimonialDots[index].classList.add('active');
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % testimonialSlides.length;
-        showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + testimonialSlides.length) % testimonialSlides.length;
-        showSlide(currentSlide);
-    }
-
-    if (testimonialSlides.length > 0) {
-        showSlide(0);
-        
-        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-        
-        testimonialDots.forEach((dot, i) => {
-            dot.addEventListener('click', () => {
-                currentSlide = i;
-                showSlide(currentSlide);
-            });
-        });
-
-        // Auto-slide
-        setInterval(nextSlide, 6000);
-    }
-
     // --- FAQ Accordion ---
     const faqItems = document.querySelectorAll('.faq-item');
     
@@ -198,6 +154,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // If a project photo fails to load, keep the card readable
+    projectCards.forEach(card => {
+        const img = card.querySelector('img');
+        if (img) img.addEventListener('error', () => card.classList.add('img-failed'));
+    });
+
     // --- Project Modal ---
     const modalOverlay = document.querySelector('.modal-overlay');
     const modalClose = document.querySelector('.modal-close');
@@ -212,43 +174,55 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Meridian Tower',
             location: 'New York, NY',
             year: '2024',
-            description: 'A 45-story mixed-use commercial tower featuring state-of-the-art glass facade technology, LEED Platinum certification, and 2.1 million square feet of premium office and retail space. The project incorporated innovative seismic design and smart building systems.',
-            image: 'images/project-commercial-1.jpg'
+            description: 'A 45-story mixed-use commercial tower featuring state-of-the-art glass facade technology, LEED Platinum certification, and 2.1 million square feet of premium office and retail space. The project incorporated innovative seismic design and smart building systems.'
         },
         'azure-residences': {
             title: 'Azure Residences',
             location: 'Miami, FL',
             year: '2023',
-            description: 'A luxury waterfront residential complex comprising 120 exclusive units with private terraces, infinity pools, and panoramic ocean views. Features include a private marina, spa, and concierge services.',
-            image: 'images/project-residential-1.jpg'
+            description: 'A luxury waterfront residential complex comprising 120 exclusive units with private terraces, infinity pools, and panoramic ocean views. Features include a private marina, spa, and concierge services.'
         },
         'nexus-industrial': {
             title: 'Nexus Industrial Park',
             location: 'Houston, TX',
             year: '2024',
-            description: 'A 500,000 sq ft advanced manufacturing facility with automated logistics systems, clean room environments, and sustainable energy solutions including 2MW of rooftop solar generation.',
-            image: 'images/project-industrial-1.jpg'
+            description: 'A 500,000 sq ft advanced manufacturing facility with automated logistics systems, clean room environments, and sustainable energy solutions including 2MW of rooftop solar generation.'
         },
         'horizon-bridge': {
             title: 'Horizon Bridge',
             location: 'Seattle, WA',
             year: '2023',
-            description: 'A 1.2-mile cable-stayed bridge connecting downtown to the waterfront district. Designed to withstand 9.0 magnitude earthquakes and features integrated LED lighting and pedestrian walkways.',
-            image: 'images/project-infrastructure-1.jpg'
+            description: 'A 1.2-mile cable-stayed bridge connecting downtown to the waterfront district. Designed to withstand 9.0 magnitude earthquakes and features integrated LED lighting and pedestrian walkways.'
         },
         'plaza-central': {
             title: 'Plaza Central',
             location: 'Chicago, IL',
             year: '2022',
-            description: 'A 30-story Class A office building in the heart of the Loop with floor-to-ceiling windows, rooftop gardens, and underground parking for 800 vehicles. Winner of the AIA Honor Award.',
-            image: 'images/project-commercial-2.jpg'
+            description: 'A 30-story Class A office building in the heart of the Loop with floor-to-ceiling windows, rooftop gardens, and underground parking for 800 vehicles. Winner of the AIA Honor Award.'
+        },
+        'pacific-logistics-hub': {
+            title: 'Pacific Logistics Hub',
+            location: 'Los Angeles, CA',
+            year: '2023',
+            description: 'A 700,000 sq ft distribution center with high-bay racking, 90 loading docks and a rooftop solar array, built for fast turnaround of regional freight.'
+        },
+        'metro-line-extension': {
+            title: 'Metro Line Extension',
+            location: 'Washington, DC',
+            year: '2024',
+            description: 'A 4-mile extension of the metro line with three new underground stations, step-free access and upgraded ventilation and signaling.'
+        },
+        'the-summit': {
+            title: 'The Summit',
+            location: 'Denver, CO',
+            year: '2023',
+            description: 'A 22-story office tower with a glass curtain wall, a public plaza at street level and views of the Rocky Mountains.'
         },
         'oakwood-estates': {
             title: 'Oakwood Estates',
             location: 'Austin, TX',
             year: '2024',
-            description: 'An exclusive gated community of 45 custom-built luxury homes on 200 acres of rolling hills. Each residence features smart home technology, geothermal heating, and private acreage.',
-            image: 'images/project-residential-2.jpg'
+            description: 'An exclusive gated community of 45 custom-built luxury homes on 200 acres of rolling hills. Each residence features smart home technology, geothermal heating, and private acreage.'
         }
     };
 
@@ -258,7 +232,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = projectData[projectId];
             
             if (data && modalOverlay) {
-                modalImage.src = data.image;
+                const cardImg = card.querySelector('img');
+                modalImage.src = cardImg ? cardImg.src.replace(/w=\d+/, 'w=1400') : '';
                 modalImage.alt = data.title;
                 modalTitle.textContent = data.title;
                 modalLocation.textContent = data.location;

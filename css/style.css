@@ -35,6 +35,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: clip;
 }
 
 body {
@@ -77,8 +78,9 @@ button {
 
 /* --- Typography --- */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 700;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
     color: var(--white);
     line-height: 1.2;
 }
@@ -282,7 +284,7 @@ p {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--white);
@@ -401,7 +403,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(26,26,26,0.3) 0%, rgba(26,26,26,0.8) 100%);
+    background: rgba(26,26,26,0.65);
     z-index: 1;
 }
 
@@ -462,7 +464,7 @@ p {
     display: block;
     width: 1px;
     height: 60px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
+    background: var(--gold);
     margin: 0 auto;
 }
 
@@ -492,7 +494,7 @@ p {
 }
 
 .stat-number {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', sans-serif;
     font-size: clamp(2.5rem, 4vw, 3.5rem);
     font-weight: 700;
     color: var(--gold);
@@ -530,16 +532,6 @@ p {
 
 .why-image:hover img {
     transform: scale(1.03);
-}
-
-.why-image::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: linear-gradient(to top, rgba(26,26,26,0.8), transparent);
 }
 
 .why-features {
@@ -686,6 +678,19 @@ p {
     aspect-ratio: 4/3;
 }
 
+.project-card {
+    background: var(--charcoal-light);
+}
+
+.project-card.img-failed img {
+    visibility: hidden;
+}
+
+.project-card.img-failed .project-overlay {
+    opacity: 1;
+    transform: none;
+}
+
 .project-card img {
     width: 100%;
     height: 100%;
@@ -703,7 +708,7 @@ p {
     left: 0;
     width: 100%;
     padding: 2rem;
-    background: linear-gradient(to top, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.4) 60%, transparent 100%);
+    background: rgba(26,26,26,0.85);
     transform: translateY(20px);
     opacity: 0;
     transition: var(--transition-smooth);
@@ -833,119 +838,6 @@ p {
 
 .modal-body p {
     margin-bottom: 1.5rem;
-}
-
-/* --- Testimonials --- */
-.testimonials-slider {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.testimonial-slide {
-    display: none;
-    text-align: center;
-    padding: 2rem;
-    animation: fadeIn 0.5s ease;
-}
-
-.testimonial-slide.active {
-    display: block;
-}
-
-.testimonial-text {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-    font-style: italic;
-    color: var(--white);
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    position: relative;
-}
-
-.testimonial-text::before {
-    content: '"';
-    font-size: 4rem;
-    color: var(--gold);
-    opacity: 0.3;
-    position: absolute;
-    top: -1rem;
-    left: -1rem;
-    font-family: Georgia, serif;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.testimonial-author img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top center;
-    border: 2px solid var(--gold);
-}
-
-.testimonial-author-info h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-}
-
-.testimonial-author-info p {
-    font-size: 0.85rem;
-    color: var(--gold);
-}
-
-.testimonial-nav {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.testimonial-nav button {
-    width: 50px;
-    height: 50px;
-    border: 1px solid var(--glass-border);
-    border-radius: 50%;
-    color: var(--white);
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition-smooth);
-}
-
-.testimonial-nav button:hover {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--charcoal);
-}
-
-.testimonial-dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--charcoal-lighter);
-    cursor: pointer;
-    transition: var(--transition-smooth);
-}
-
-.dot.active {
-    background: var(--gold);
-    transform: scale(1.2);
 }
 
 /* --- Team Section --- */
@@ -1223,22 +1115,6 @@ p {
     margin-bottom: 0.5rem;
 }
 
-/* --- Map --- */
-.map-container {
-    width: 100%;
-    height: 400px;
-    border-radius: 4px;
-    overflow: hidden;
-    border: 1px solid var(--glass-border);
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    filter: grayscale(100%) invert(92%) contrast(83%);
-}
-
 /* --- Timeline --- */
 .timeline {
     position: relative;
@@ -1252,7 +1128,7 @@ p {
     top: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(to bottom, var(--gold), transparent);
+    background: var(--gold);
 }
 
 .timeline-item {
@@ -1288,7 +1164,7 @@ p {
 
 /* --- CTA Section --- */
 .cta-section {
-    background: linear-gradient(135deg, var(--charcoal-light) 0%, var(--charcoal) 100%);
+    background: var(--charcoal-light);
     text-align: center;
     padding: 5rem 0;
     border-top: 1px solid var(--glass-border);
@@ -1297,16 +1173,6 @@ p {
     overflow: hidden;
 }
 
-.cta-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(201,169,110,0.03) 0%, transparent 70%);
-    pointer-events: none;
-}
 
 .cta-section h2 {
     margin-bottom: 1rem;
@@ -1576,7 +1442,7 @@ p {
 }
 
 .error-code {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', sans-serif;
     font-size: clamp(6rem, 15vw, 12rem);
     font-weight: 700;
     color: var(--gold);
@@ -1892,14 +1758,6 @@ p {
         left: -2.4rem;
     }
 
-    /* --- Testimonials spacing --- */
-    .testimonial-slide {
-        padding: 1rem;
-    }
-
-    .testimonial-text::before {
-        left: 0;
-    }
 }
 
 @media (max-width: 480px) {
